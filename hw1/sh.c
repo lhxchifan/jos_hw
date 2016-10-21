@@ -64,10 +64,11 @@ runcmd(struct cmd *cmd)
     //fprintf(stderr, "exec not implemented\n");
     // Your code here ...
 	char buf[256] = "/bin/";
-	strcat(buf,ecmd->argv[0]);
+//	strcat(buf,ecmd->argv[0]);
 	//strcat(buf,ecmd->argv[0]);
 	//chdir("/bin/");
-	execv(buf,ecmd->argv);
+	//execv(buf,ecmd->argv);
+	execv(ecmd->argv[0],ecmd->argv);
     break;
 
   case '>':
@@ -86,6 +87,9 @@ runcmd(struct cmd *cmd)
   case '|':
     pcmd = (struct pipecmd*)cmd;
     // Your code here ...
+	if(pipe(p)<0){
+		fprintf(stderr,"pipe err\n");
+	}
 	if(fork1()==0){
 		close(1);
 		dup(p[1]);
@@ -102,8 +106,8 @@ runcmd(struct cmd *cmd)
 	}
 	close(p[0]);
 	close(p[1]);
-	wait(0);
-	wait(0);
+	wait(&r);
+	wait(&r);
 	break;
   }    
   exit(0);
