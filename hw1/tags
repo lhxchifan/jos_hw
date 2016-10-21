@@ -1,0 +1,55 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+MAXARGS	sh.c	13;"	d	file:
+argv	sh.c	/^  char *argv[MAXARGS];   \/\/ arguments to the command to be exec-ed$/;"	m	struct:execcmd	file:	access:public
+cmd	sh.c	/^  struct cmd *cmd;   \/\/ the command to be run (e.g., an execcmd)$/;"	m	struct:redircmd	typeref:struct:redircmd::cmd	file:	access:public
+cmd	sh.c	/^struct cmd {$/;"	s	file:
+cmd::type	sh.c	/^  int type;          \/\/  ' ' (exec), | (pipe), '<' or '>' for redirection$/;"	m	struct:cmd	file:	access:public
+execcmd	sh.c	/^execcmd(void)$/;"	f	signature:(void)
+execcmd	sh.c	/^struct execcmd {$/;"	s	file:
+execcmd::argv	sh.c	/^  char *argv[MAXARGS];   \/\/ arguments to the command to be exec-ed$/;"	m	struct:execcmd	file:	access:public
+execcmd::type	sh.c	/^  int type;              \/\/ ' '$/;"	m	struct:execcmd	file:	access:public
+fd	sh.c	/^  int fd;            \/\/ the file descriptor number to use for the file$/;"	m	struct:redircmd	file:	access:public
+file	sh.c	/^  char *file;        \/\/ the input\/output file$/;"	m	struct:redircmd	file:	access:public
+fork1	sh.c	/^fork1(void)$/;"	f	signature:(void)
+fork1	sh.c	/^int fork1(void);  \/\/ Fork but exits on failure.$/;"	p	file:	signature:(void)
+getcmd	sh.c	/^getcmd(char *buf, int nbuf)$/;"	f	signature:(char *buf, int nbuf)
+gettoken	sh.c	/^gettoken(char **ps, char *es, char **q, char **eq)$/;"	f	signature:(char **ps, char *es, char **q, char **eq)
+left	sh.c	/^  struct cmd *left;  \/\/ left side of pipe$/;"	m	struct:pipecmd	typeref:struct:pipecmd::cmd	file:	access:public
+main	sh.c	/^main(void)$/;"	f	signature:(void)
+mkcopy	sh.c	/^*mkcopy(char *s, char *es)$/;"	f	signature:(char *s, char *es)
+mode	sh.c	/^  int mode;          \/\/ the mode to open the file with$/;"	m	struct:redircmd	file:	access:public
+parsecmd	sh.c	/^parsecmd(char *s)$/;"	f	signature:(char *s)
+parsecmd	sh.c	/^struct cmd *parsecmd(char*);$/;"	p	file:	signature:(char*)
+parseexec	sh.c	/^parseexec(char **ps, char *es)$/;"	f	signature:(char **ps, char *es)
+parseexec	sh.c	/^struct cmd *parseexec(char**, char*);$/;"	p	file:	signature:(char**, char*)
+parseline	sh.c	/^parseline(char **ps, char *es)$/;"	f	signature:(char **ps, char *es)
+parseline	sh.c	/^struct cmd *parseline(char**, char*);$/;"	p	file:	signature:(char**, char*)
+parsepipe	sh.c	/^parsepipe(char **ps, char *es)$/;"	f	signature:(char **ps, char *es)
+parsepipe	sh.c	/^struct cmd *parsepipe(char**, char*);$/;"	p	file:	signature:(char**, char*)
+parseredirs	sh.c	/^parseredirs(struct cmd *cmd, char **ps, char *es)$/;"	f	signature:(struct cmd *cmd, char **ps, char *es)
+peek	sh.c	/^peek(char **ps, char *es, char *toks)$/;"	f	signature:(char **ps, char *es, char *toks)
+pipecmd	sh.c	/^pipecmd(struct cmd *left, struct cmd *right)$/;"	f	signature:(struct cmd *left, struct cmd *right)
+pipecmd	sh.c	/^struct pipecmd {$/;"	s	file:
+pipecmd::left	sh.c	/^  struct cmd *left;  \/\/ left side of pipe$/;"	m	struct:pipecmd	typeref:struct:pipecmd::cmd	file:	access:public
+pipecmd::right	sh.c	/^  struct cmd *right; \/\/ right side of pipe$/;"	m	struct:pipecmd	typeref:struct:pipecmd::cmd	file:	access:public
+pipecmd::type	sh.c	/^  int type;          \/\/ |$/;"	m	struct:pipecmd	file:	access:public
+redircmd	sh.c	/^redircmd(struct cmd *subcmd, char *file, int type)$/;"	f	signature:(struct cmd *subcmd, char *file, int type)
+redircmd	sh.c	/^struct redircmd {$/;"	s	file:
+redircmd::cmd	sh.c	/^  struct cmd *cmd;   \/\/ the command to be run (e.g., an execcmd)$/;"	m	struct:redircmd	typeref:struct:redircmd::cmd	file:	access:public
+redircmd::fd	sh.c	/^  int fd;            \/\/ the file descriptor number to use for the file$/;"	m	struct:redircmd	file:	access:public
+redircmd::file	sh.c	/^  char *file;        \/\/ the input\/output file$/;"	m	struct:redircmd	file:	access:public
+redircmd::mode	sh.c	/^  int mode;          \/\/ the mode to open the file with$/;"	m	struct:redircmd	file:	access:public
+redircmd::type	sh.c	/^  int type;          \/\/ < or > $/;"	m	struct:redircmd	file:	access:public
+right	sh.c	/^  struct cmd *right; \/\/ right side of pipe$/;"	m	struct:pipecmd	typeref:struct:pipecmd::cmd	file:	access:public
+runcmd	sh.c	/^runcmd(struct cmd *cmd)$/;"	f	signature:(struct cmd *cmd)
+symbols	sh.c	/^char symbols[] = "<|>";$/;"	v
+type	sh.c	/^  int type;              \/\/ ' '$/;"	m	struct:execcmd	file:	access:public
+type	sh.c	/^  int type;          \/\/  ' ' (exec), | (pipe), '<' or '>' for redirection$/;"	m	struct:cmd	file:	access:public
+type	sh.c	/^  int type;          \/\/ < or > $/;"	m	struct:redircmd	file:	access:public
+type	sh.c	/^  int type;          \/\/ |$/;"	m	struct:pipecmd	file:	access:public
+whitespace	sh.c	/^char whitespace[] = " \\t\\r\\n\\v";$/;"	v
